@@ -30,5 +30,7 @@ export const Column = styled.section`
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 
     font-size: .7rem;
+
+    cursor: pointer;
   }
 `

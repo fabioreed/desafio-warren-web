@@ -12,13 +12,17 @@ interface IDashContext {
   status: string
   setStatus: React.Dispatch<React.SetStateAction<string>>
   filteredStatus: ITransaction[]
+  modal: boolean
+  setModal: React.Dispatch<React.SetStateAction<boolean>>
+  selectedTransaction: ITransaction | null
+  setSelectedTransaction: React.Dispatch<React.SetStateAction<ITransaction | null>>
 }
 
 interface IDefaultProviderProps {
   children: React.ReactNode
 }
 
-interface ITransaction {
+export interface ITransaction {
   id: string
   title: string
   description: string
@@ -35,6 +39,8 @@ export const DashProvider = ({ children }: IDefaultProviderProps) => {
   const [transactionss, setTransactionss] = useState<ITransaction[]>([])
   const [search, setSearch] = useState('')
   const [status, setStatus] = useState('')
+  const [modal, setModal] = useState(false)
+  const [selectedTransaction, setSelectedTransaction] = useState<ITransaction | null>(null)
 
   const filteredInput = search.length > 0
     ? transactionss.filter(transaction => transaction.title.toLowerCase().includes(search.toLowerCase())) : []
@@ -42,8 +48,6 @@ export const DashProvider = ({ children }: IDefaultProviderProps) => {
   const filteredStatus = status
     ? transactionss.filter(transaction => transaction.status === status) : transactions
   
-  console.log(filteredStatus)
-
   useEffect(() => {
     const getTransactions = async () => {
       try {
@@ -88,7 +92,11 @@ export const DashProvider = ({ children }: IDefaultProviderProps) => {
       filteredInput,
       status,
       setStatus,
-      filteredStatus
+      filteredStatus,
+      modal,
+      setModal,
+      selectedTransaction,
+      setSelectedTransaction
     }}>
       { children }
     </DashContext.Provider>
