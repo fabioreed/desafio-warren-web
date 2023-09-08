@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <MainHeaderContainer>
       <h2>
-        Logo
+        Finances.Upgrade
       </h2>
     </MainHeaderContainer>
   )

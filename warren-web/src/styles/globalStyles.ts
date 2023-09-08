@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     background-color: var(--white);
-    font-family: 'Open sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
   }
 
   button {

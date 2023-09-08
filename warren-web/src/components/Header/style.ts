@@ -9,9 +9,15 @@ export const MainHeaderContainer = styled.header`
 
   border-bottom: 1px solid rgba(0, 0, 0, 0.09);
 
-  background: var(--light-gray);
+  background: var(--yellow);
 
   > h2 {
     color: var(--black);
+  }
+
+  @media (min-width: 768px) {
+    padding: 2rem 11rem;
+
+    justify-content: flex-start;
   }
 `

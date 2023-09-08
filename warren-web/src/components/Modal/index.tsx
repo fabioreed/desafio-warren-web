@@ -8,13 +8,13 @@ const Modal = () => {
   const calculateProgress = () => {
     switch (selectedTransaction?.status) {
       case 'Solicitada':
-        return '25%';
+        return '25%'
       case 'Processando':
-        return '50%';
+        return '50%'
       case 'Concluída':
-        return '100%';
+        return '100%'
       default:
-        return '0%';
+        return '0%'
     }
   }
 

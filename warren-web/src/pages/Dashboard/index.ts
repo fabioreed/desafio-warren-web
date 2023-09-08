@@ -5,8 +5,6 @@ export const FiltersContainer = styled.section`
   flex-direction: column;
   gap: .5rem;
 
-  /* padding: 1rem 2rem; */
-
   @media (min-width: 768px) {
     flex-direction: row;
   }
@@ -18,4 +16,10 @@ export const Container = styled.main`
   display: flex;
   flex-direction: column;
   gap: 1.7rem;
+
+  @media (min-width: 768px) {
+    padding: 3rem 11rem;
+
+    gap: 3rem;
+  }
 `
