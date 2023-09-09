@@ -64,7 +64,11 @@ export const BarContainer = styled.div`
   }
 `
 
-export const Bar = styled.div`
+interface BarProps {
+  width?: string
+}
+
+export const Bar = styled.div<BarProps>`
   width: ${props => props.width || '100%'};
   height: 10px;
 
